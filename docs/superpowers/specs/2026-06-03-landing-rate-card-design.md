@@ -388,10 +388,11 @@ Manual checklist (before ship):
 ## 14. Build & deploy
 
 - Vercel, preview per PR
-- Build: `pnpm build` (or npm)
+- Build: `bun run build`
 - Output: static (App Router default static rendering)
 - Domain: TBD (`kcmon.id/rate` or `kcmn-commish.kcmon.id`)
 - CI: Playwright on every PR, Lighthouse CI on main, bundle size PR comments
+- Package manager: **Bun** (primary). npm fallback only on dependency conflict.
 
 ## 15. Out of scope (YAGNI)
 
