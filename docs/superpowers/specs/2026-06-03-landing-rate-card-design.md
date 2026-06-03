@@ -39,7 +39,7 @@ Reuse **Obsidian Gold** design system from `DESIGN.md` (project root) as-is for:
 | `@axe-core/playwright`     | latest            | Accessibility audit               |
 | Lighthouse CI              | latest            | Performance budget enforcement    |
 
-All deps verified as latest stable on `npm install`. Lock file committed. Use `motion` package (Framer Motion rebrand) — import path `motion/react` for client components.
+All deps verified as latest stable on `bun install`. Lock file (`bun.lockb` or `bun.lock`) committed. Use `motion` package (Framer Motion rebrand) — import path `motion/react` for client components. Bun as primary package manager + script runner; npm fallback only if a specific dep has no Bun support.
 
 ## 4. File structure
 
@@ -308,6 +308,7 @@ Tailwind: `xs: 480, sm: 640, md: 768, lg: 1024, xl: 1280, 2xl: 1440`.
 - Code split: each section dynamic import except Hero, LiveDemo lazy on approach
 - Framer Motion (`motion` package): `LazyMotion` + `domAnimation` features only (~25KB)
 - Lenis: client-only dynamic import
+- Bun for dev server (`bun run dev`) + build (`bun run build`) + test (`bun test`) + install
 - No third-party scripts (no analytics, no chat widget)
 - Tailwind purge, critical CSS via Next default
 - `transform` + `opacity` only for animations
