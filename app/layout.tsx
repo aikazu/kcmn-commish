@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -41,7 +42,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="id"
       className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
