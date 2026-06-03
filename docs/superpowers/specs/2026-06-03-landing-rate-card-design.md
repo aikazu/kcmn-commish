@@ -11,7 +11,7 @@ Landing page serves as public rate card for Iqbal Attila's web dev/frontend comm
 
 ## 2. Brand foundation
 
-Reuse **Obsidian Gold** design system from `DESIGN.md` (project root) as-is for: color tokens, typography (Fraunces / Inter / JetBrains Mono), spacing scale, motion tokens (fast 150ms / medium 250ms / slow 400ms), component primitives (btn, input, badge, stat, terminal, card with 2px gold top-line), signature details (section eyebrow + 32px gold rule, italic gold accent per display headline, spec-sheet sidebar, image-overlay mandatory), discipline rules (1 gold accent per moment, 1 CTA per view, no fourth font, no glow on mark).
+Reuse **Obsidian Gold** design system from `docs/brand-system.md` as-is for: color tokens, typography (Fraunces / Inter / JetBrains Mono), spacing scale, motion tokens (fast 150ms / medium 250ms / slow 400ms), component primitives (btn, input, badge, stat, terminal, card with 2px gold top-line), signature details (section eyebrow + 32px gold rule, italic gold accent per display headline, spec-sheet sidebar, image-overlay mandatory), discipline rules (1 gold accent per moment, 1 CTA per view, no fourth font, no glow on mark).
 
 **Tweaks for this project** (landing demands more than deck/PDF):
 - Add `motion-slower` token (700ms, `cubic-bezier(0.16,1,0.3,1)`) for orchestrated reveals
