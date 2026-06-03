@@ -30,7 +30,7 @@ Reuse **Obsidian Gold** design system from `DESIGN.md` (project root) as-is for:
 | Next.js                    | 15.x latest stable| App Router, SSR, Image, Metadata  |
 | TypeScript                 | 5.x latest strict| Type safety                       |
 | Tailwind CSS               | 4.x latest        | Styling                           |
-| Framer Motion (`motion`)   | 11.x+ latest      | Animation, layout, gestures       |
+| Framer Motion (npm: `motion`) | 11.x+ latest   | Animation, layout, gestures. Import via `motion/react`. |
 | Lenis                      | latest            | Smooth scroll                     |
 | Lucide React               | latest            | Icons                             |
 | Vitest                     | latest            | Unit + component tests            |
@@ -39,7 +39,7 @@ Reuse **Obsidian Gold** design system from `DESIGN.md` (project root) as-is for:
 | `@axe-core/playwright`     | latest            | Accessibility audit               |
 | Lighthouse CI              | latest            | Performance budget enforcement    |
 
-All deps verified as latest stable on `npm install`. Lock file committed.
+All deps verified as latest stable on `npm install`. Lock file committed. Use `motion` package (Framer Motion rebrand) — import path `motion/react` for client components.
 
 ## 4. File structure
 
@@ -306,7 +306,7 @@ Tailwind: `xs: 480, sm: 640, md: 768, lg: 1024, xl: 1280, 2xl: 1440`.
 - Fonts: preload 3 families with `display=swap`, subset Latin Extended, self-host via `next/font/local`
 - Images: Next/Image, `priority` only on hero LCP, AVIF + WebP
 - Code split: each section dynamic import except Hero, LiveDemo lazy on approach
-- Framer Motion: `LazyMotion` + `domAnimation` features only (~25KB)
+- Framer Motion (`motion` package): `LazyMotion` + `domAnimation` features only (~25KB)
 - Lenis: client-only dynamic import
 - No third-party scripts (no analytics, no chat widget)
 - Tailwind purge, critical CSS via Next default
