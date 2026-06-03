@@ -81,7 +81,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderColor: "var(--color-border)" }}>
-          <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-text-dim">
+          <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-text-muted">
             © 2026 Iqbal Attila. All rights reserved.
           </p>
           <button
