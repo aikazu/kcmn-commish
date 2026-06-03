@@ -14,16 +14,24 @@ export function Atmosphere() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
 
+  // 1. Detect capability — enables render of the cursor nodes.
   useEffect(() => {
-    if (reduce) return;
+    if (reduce) {
+      setEnabled(false);
+      return;
+    }
     const finePointer = window.matchMedia("(pointer: fine)").matches;
-    if (!finePointer) return;
-    setEnabled(true);
-    document.documentElement.classList.add("has-custom-cursor");
+    setEnabled(finePointer);
+  }, [reduce]);
 
+  // 2. Wire pointer tracking once the nodes exist.
+  useEffect(() => {
+    if (!enabled) return;
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
+
+    document.documentElement.classList.add("has-custom-cursor");
 
     let rx = window.innerWidth / 2;
     let ry = window.innerHeight / 2;
@@ -56,7 +64,7 @@ export function Atmosphere() {
       cancelAnimationFrame(raf);
       document.documentElement.classList.remove("has-custom-cursor");
     };
-  }, [reduce]);
+  }, [enabled]);
 
   return (
     <>
