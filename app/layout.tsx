@@ -43,7 +43,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${fraunces.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-canvas focus:font-mono focus:text-[11px] focus:uppercase focus:tracking-[0.12em]"
+        >
+          Skip to main content
+        </a>
         <SmoothScroll>{children}</SmoothScroll>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Iqbal Attila",
+              jobTitle: "Web Developer",
+              url: "https://kcmon.id",
+              sameAs: [
+                "https://github.com/iqbalattila",
+                "https://linkedin.com/in/iqbalattila",
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );
