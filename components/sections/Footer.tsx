@@ -1,12 +1,14 @@
 "use client";
 
-import { Github, Linkedin, Instagram, Mail, ArrowUp } from "lucide-react";
+import { ExternalLink, Mail, ArrowUp } from "lucide-react";
 import { SOCIAL, CONTACT_EMAIL } from "@/components/data/contact";
 
-const SOCIAL_ICONS = {
-  github: Github,
-  linkedin: Linkedin,
-  instagram: Instagram,
+// lucide-react v1.17+ removed brand icons (Github, Linkedin, Instagram).
+// Use generic ExternalLink for all socials.
+const SOCIAL_ICONS: Record<string, typeof ExternalLink> = {
+  github: ExternalLink,
+  linkedin: ExternalLink,
+  instagram: ExternalLink,
 };
 
 const NAV_LINKS = [
