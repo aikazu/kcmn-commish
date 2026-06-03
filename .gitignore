@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+dist
+.env*.local
+.DS_Store
+*.tsbuildinfo
+bun.lockb
+# bun.lock (text format, v1.2+) IS committed — do not ignore
+playwright-report
+test-results
+.lighthouseci
+.superpowers/brainstorm
