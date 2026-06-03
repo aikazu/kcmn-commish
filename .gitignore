@@ -11,3 +11,5 @@ playwright-report
 test-results
 .lighthouseci
 .superpowers/brainstorm
+.playwright*
+.claude
