@@ -3,14 +3,16 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { Magnetic } from "@/components/motion/Magnetic";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export function CTA() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-24 md:py-32 px-4 md:px-6 lg:px-12 relative overflow-hidden" aria-labelledby="cta-heading">
+    <section className="section-line relative overflow-hidden px-4 py-28 md:px-6 md:py-36 lg:px-12" aria-labelledby="cta-heading">
       <div className="absolute inset-0 gold-glow pointer-events-none" aria-hidden="true" />
+      <div className="grid-texture pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
       <motion.div
         className="max-w-3xl mx-auto text-center relative"
         initial={reduce ? false : { opacity: 0, y: 20 }}
@@ -25,12 +27,14 @@ export function CTA() {
           Diskusi gratis 30 menit via WhatsApp atau video call. Tidak ada commitment, tidak ada tekanan.
         </p>
         <div className="mt-10">
-          <Button
-            href={buildWhatsAppLink({ message: "Halo Iqbal, saya siap mulai. Boleh jadwalkan kickoff call?" })}
-            size="large"
-          >
-            Mulai via WhatsApp <ArrowRight size={14} className="ml-2" />
-          </Button>
+          <Magnetic strength={0.4}>
+            <Button
+              href={buildWhatsAppLink({ message: "Halo Iqbal, saya siap mulai. Boleh jadwalkan kickoff call?" })}
+              size="large"
+            >
+              Mulai via WhatsApp <ArrowRight size={14} className="ml-2" />
+            </Button>
+          </Magnetic>
         </div>
       </motion.div>
     </section>

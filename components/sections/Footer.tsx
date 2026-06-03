@@ -20,7 +20,7 @@ const NAV_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="border-t" style={{ borderColor: "var(--color-border)" }}>
+    <footer className="relative z-10 border-t" style={{ borderColor: "var(--color-border)" }}>
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>

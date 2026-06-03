@@ -13,3 +13,6 @@ test-results
 .superpowers/brainstorm
 .playwright*
 .claude
+# audit artifacts
+*.png
+dev.log

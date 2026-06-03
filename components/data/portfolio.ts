@@ -6,6 +6,9 @@ export interface Project {
   tech: string[];
   imageGradient: [string, string];
   span: "lg" | "md" | "sm";
+  year: string;
+  /** Short metric shown on the tile, e.g. "98 Lighthouse". */
+  metric: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -17,6 +20,8 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "TypeScript", "Tailwind", "Recharts"],
     imageGradient: ["#1F1F1F", "#C9A352"],
     span: "lg",
+    year: "2026",
+    metric: "12k MAU",
   },
   {
     id: "p2",
@@ -26,6 +31,8 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "Stripe", "Sanity CMS"],
     imageGradient: ["#282828", "#E0BF6B"],
     span: "md",
+    year: "2025",
+    metric: "+38% konversi",
   },
   {
     id: "p3",
@@ -35,6 +42,8 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "Framer Motion"],
     imageGradient: ["#121212", "#8A6F2D"],
     span: "md",
+    year: "2025",
+    metric: "100 Lighthouse",
   },
   {
     id: "p4",
@@ -44,6 +53,8 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "Prisma", "PostgreSQL"],
     imageGradient: ["#1F1F1F", "#C9A352"],
     span: "sm",
+    year: "2024",
+    metric: "RBAC",
   },
   {
     id: "p5",
@@ -53,6 +64,8 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "Motion", "Lenis"],
     imageGradient: ["#282828", "#E0BF6B"],
     span: "sm",
+    year: "2024",
+    metric: "Award-listed",
   },
   {
     id: "p6",
@@ -62,5 +75,7 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "Supabase", "Tailwind"],
     imageGradient: ["#121212", "#C9A352"],
     span: "sm",
+    year: "2025",
+    metric: "Real-time",
   },
 ];

@@ -107,7 +107,7 @@ Gold is shifted warmer than the standard `#D4AF37` to escape "luxury template" d
 | ------------ | --------- | --------------------------------- |
 | `text`       | `#F0EDE7` | Body, primary                     |
 | `text-muted` | `#A39F97` | Secondary, captions               |
-| `text-dim`   | `#6E6A62` | Tertiary, footnotes, page numbers |
+| `text-dim`   | `#868179` | Tertiary, footnotes, page numbers (AA-compliant on canvas) |
 
 ### 3.4 Border
 

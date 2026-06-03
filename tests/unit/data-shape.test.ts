@@ -22,6 +22,8 @@ describe("data shape", () => {
       expect(p.title).toBeTruthy();
       expect(p.tech.length).toBeGreaterThan(0);
       expect(["lg", "md", "sm"]).toContain(p.span);
+      expect(p.year).toBeTruthy();
+      expect(p.metric).toBeTruthy();
     }
   });
   it("testimonials have required fields", () => {

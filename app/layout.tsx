@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { Atmosphere } from "@/components/motion/Atmosphere";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -49,6 +50,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
+        <div
+          className="depth-mesh grid-texture pointer-events-none fixed inset-0 z-0"
+          aria-hidden="true"
+        />
+        <Atmosphere />
         <SmoothScroll>{children}</SmoothScroll>
         <script
           type="application/ld+json"

@@ -1,8 +1,10 @@
 import { Nav } from "@/components/sections/Nav";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
+import { Stats } from "@/components/sections/Stats";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { LiveDemo } from "@/components/sections/LiveDemo";
+import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { RateCard } from "@/components/sections/RateCard";
 import { FAQ } from "@/components/sections/FAQ";
@@ -14,11 +16,13 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main id="main-content">
+      <main id="main-content" className="relative z-10">
         <Hero />
         <Services />
+        <Stats />
         <Portfolio />
         <LiveDemo />
+        <Process />
         <Testimonials />
         <RateCard />
         <FAQ />

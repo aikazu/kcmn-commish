@@ -3,8 +3,16 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  useReducedMotion,
+  useScroll,
+  useMotionValueEvent,
+  useSpring,
+} from "motion/react";
 import { Button } from "@/components/ui/Button";
+import { Sigil } from "@/components/ui/Sigil";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/cn";
 
@@ -17,21 +25,47 @@ const NAV_LINKS = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 180,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    setScrolled(v > 0.01);
+  });
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
-      style={{ background: "rgba(10, 10, 10, 0.8)", borderBottom: "1px solid var(--color-border)" }}
+      className={cn(
+        "fixed left-0 right-0 top-0 z-50 backdrop-blur-md transition-[background,height] duration-300",
+        scrolled
+          ? "border-b border-border bg-[rgba(10,10,10,0.88)]"
+          : "border-b border-transparent bg-[rgba(10,10,10,0.4)]"
+      )}
       aria-label="Main navigation"
     >
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-12 h-16 flex items-center justify-between">
+      <div
+        className={cn(
+          "mx-auto flex max-w-[1280px] items-center justify-between px-4 transition-[height] duration-300 md:px-6 lg:px-12",
+          scrolled ? "h-14" : "h-16"
+        )}
+      >
         <Link
           href="/"
-          className="font-display text-xl text-text hover:text-gold transition-colors"
+          className="group flex items-center gap-2.5 text-text transition-colors hover:text-gold"
           aria-label="Iqbal Attila home"
         >
-          IA<span className="text-gold">.</span>
+          <Sigil
+            size={scrolled ? 26 : 30}
+            className="transition-all duration-300 group-hover:rotate-[-3deg]"
+          />
+          <span className="font-display text-lg leading-none">
+            Iqbal Attila
+          </span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -104,6 +138,13 @@ export function Nav() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Scroll progress — hairline gold fill across the bottom edge */}
+      <motion.div
+        className="absolute bottom-0 left-0 h-[2px] origin-left bg-gold"
+        style={{ scaleX: progress, width: "100%" }}
+        aria-hidden="true"
+      />
     </nav>
   );
 }
