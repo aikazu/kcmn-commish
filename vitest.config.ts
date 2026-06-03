@@ -6,6 +6,10 @@ export default defineConfig({
     environment: "happy-dom",
     globals: true,
     include: ["tests/**/*.test.{ts,tsx}"],
+    setupFiles: ["./tests/setup.ts"],
+  },
+  esbuild: {
+    jsx: "automatic",
   },
   resolve: {
     alias: { "@": path.resolve(__dirname, ".") },
