@@ -29,7 +29,8 @@ export default function AppleIcon() {
             background: "#C9A352",
           }}
         />
-        <svg width="120" height="120" viewBox="0 0 200 200" fill="none">
+        <svg width="120" height="120" viewBox="0 0 200 200" fill="none" role="img">
+          <title>Iqbal Attila</title>
           <rect x="34" y="34" width="132" height="132" stroke="#C9A352" strokeWidth="4" />
           <g stroke="#C9A352" strokeWidth="3">
             <path d="M34 46 V34 H46" />
