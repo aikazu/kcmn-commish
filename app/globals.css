@@ -20,10 +20,10 @@
   --color-alert: #D27A6E;
   --color-caution: #D4A24A;
 
-  /* Fonts */
-  --font-display: "Fraunces", "Source Serif Pro", Georgia, serif;
-  --font-sans: "Inter", system-ui, -apple-system, "Helvetica Neue", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
+  /* Fonts — bound to next/font CSS variables (--font-fraunces, --font-inter, --font-jetbrains) */
+  --font-display: var(--font-fraunces), "Source Serif Pro", Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Consolas, monospace;
 
   /* Spacing — 8px base, also 4px half-step */
   --spacing-r-1: 4px;
